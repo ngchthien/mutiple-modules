@@ -22,7 +22,9 @@ material = "1.12.0" # Updated to a newer version
 glide = "4.16.0"
 navigation = "2.7.7"
 coroutines = "1.8.1"
-
+moshi = "1.15.1"
+okhttp = "4.12.0"
+secretsGradlePlugin = "2.0.1"
 [libraries]
 # Existing Core & UI
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidCoreKtx" }
@@ -54,6 +56,14 @@ hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hil
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 
+# Moshi
+retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+# OkHttp
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+
 # Room - Database
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
@@ -79,7 +89,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 navigation-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
-
+secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secretsGradlePlugin" }
 [bundles]
 # A bundle for common UI libraries
 ui = ["core-ktx", "appcompat", "material", "constraintlayout"]
