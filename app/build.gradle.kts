@@ -1,47 +1,30 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    // Chỉ cần áp dụng plugin quy ước bạn đã tạo!
+    id("app-android-application")
+    id("app-hilt")
+
+    alias(libs.plugins.navigation.safeargs)
 }
-
-android {
-    namespace = "com.tkjen.mutiple_modules"
-    compileSdk = 34
-
-    defaultConfig {
-        applicationId = "com.tkjen.mutiple_modules"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.7.1")
-    implementation("com.google.android.material:material:1.8.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.3.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
+    implementation(libs.bundles.ui)
+    implementation(libs.bundles.coroutines)
+    implementation(libs.bundles.lifecycle)
+    implementation(libs.bundles.navigation)
+    implementation(libs.bundles.retrofit)
+    implementation(libs.bundles.room)
+
+    // Hoặc thêm từng thư viện một
+    implementation(libs.fragment.ktx)
+    implementation(libs.glide)
+    ksp(libs.glide.compiler) // Dùng ksp thay vì annotationProcessor
+
+
+    // Room compiler
+    ksp(libs.room.compiler)
+
+    // Thư viện Test
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.espresso.core)
 }
