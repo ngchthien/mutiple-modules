@@ -24,6 +24,10 @@ class ApplicationLibraryConventionPlugin : Plugin<Project> {
                 defaultConfig {
                     // Consumer Proguard files là cấu hình phổ biến cho thư viện
                     consumerProguardFile("consumer-rules.pro")
+
+                }
+                buildFeatures {
+                    buildConfig = true // Bật tính năng này
                 }
             }
         }
