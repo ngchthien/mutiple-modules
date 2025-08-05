@@ -1,12 +1,11 @@
 package com.tkjen.core.network.datasource
 
+import com.tkjen.core.common.utils.NetworkResult
 import com.tkjen.core.network.apis.UserApi
 import com.tkjen.core.network.entities.UserRemote
-import com.tkjen.core.network.utils.NetworkResult
 import javax.inject.Inject
 
 interface ConfigRemoteDataSource {
-
     suspend fun getUser(): NetworkResult<List<UserRemote>>
 }
 

@@ -1,4 +1,4 @@
-package com.tkjen.core.network.utils
+package com.tkjen.core.common.utils
 
 sealed class NetworkResult<T>{
     data class Success<T>(val data: T) : NetworkResult<T>()
