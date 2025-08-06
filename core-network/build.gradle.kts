@@ -27,6 +27,7 @@ dependencies {
 
     implementation(libs.retrofit.converter.moshi)
     implementation(libs.moshi.kotlin)
+    implementation(project(mapOf("path" to ":core-common")))
     ksp(libs.moshi.codegen)
 
     implementation(libs.okhttp)
